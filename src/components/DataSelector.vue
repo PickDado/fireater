@@ -1,8 +1,8 @@
 <template>
 
-    <div>
+    <div @click="select()" @keyup="select()">
         <div>
-        <select select id="SelectDay" name="Data" @click="select()" @keyup="select()" >
+        <select select id="SelectDay" name="Data" >
         <option>- Seleziona un giorno specifico -</option>
         <option value="2020-08-21">21/08/2021</option>
         <option value="2020-08-22">22/08/2021</option>
@@ -47,6 +47,7 @@ select{
     text-align: center;
     margin-block-start: 0%;
     padding-block-start: 0%;
+    
 }
 
 

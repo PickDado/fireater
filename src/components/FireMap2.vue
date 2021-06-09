@@ -18,8 +18,8 @@
 
     <l-marker
 
-    v-for="da in dati"
-    :key="da"
+    v-for="(da,index) in dati"
+    :key="index"
     :lat-lng="latLng(da.latitude,da.longitude)"
     ></l-marker>
     
@@ -33,7 +33,7 @@ import L from "leaflet";
 import {LMap, LTileLayer, LMarker} from 'vue2-leaflet';
 
 export default {
-    name:"FireMap2",
+    name:"FireMap",
   components: {
     LMap,
     LTileLayer,
@@ -50,7 +50,7 @@ export default {
        };
   },
   props:{
-    dati:String
+    dati:Array
   },
 
    
