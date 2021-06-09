@@ -23,11 +23,11 @@
 </template>
 
 <script>
-
+import CheckExtract from "./CheckExtract.vue"
 
 export default {
     components:{
-        
+        CheckExtract
     },
 
     data(){return{
