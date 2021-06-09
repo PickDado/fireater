@@ -3,16 +3,18 @@
         <h2 v-if="!loading">N° incendi in data selezionata: {{nOfFidre}}</h2>
         <h1 v-if="loading">Caricamento in corso...</h1>
         <!-- <h1 v-if="!loading">{{Result}}</h1> -->
-    <FireMap2 v-if="!loading" :dati="Result"/>
+    <FireMap v-if="!loading" :dati="Result"/>
     </div>
 </template>
 
 <script>
+import FireMap from "./FireMap2.vue"
 
 export default {
+    
     name:"CheckExtract",
     components:{
-       
+       FireMap
     },
     data(){return{
         AllData:[],
