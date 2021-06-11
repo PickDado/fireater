@@ -9,6 +9,8 @@
       style="height: 80%; width: 100%"
       :zoom="zoom"
       :center="center"
+      :minZoom=2
+      
       @update:zoom="zoomUpdated"
       @update:center="centerUpdated"
       @update:bounds="boundsUpdated"  
@@ -21,7 +23,10 @@
     v-for="(da,index) in dati"
     :key="index"
     :lat-lng="latLng(da.latitude,da.longitude)"
-    ></l-marker>
+    >
+    <l-popup  
+    >Latitudine = {{da.latitude}} <br> Longitudine = {{da.longitude}} <br> Data = {{da.date}}
+    </l-popup></l-marker>
     
       <l-tile-layer :url="url"></l-tile-layer>
     </l-map>
@@ -30,7 +35,7 @@
 
 <script>
 import L from "leaflet"; 
-import {LMap, LTileLayer, LMarker} from 'vue2-leaflet';
+import {LMap, LTileLayer, LMarker, LPopup} from 'vue2-leaflet';
 
 export default {
     name:"FireMap",
@@ -38,6 +43,7 @@ export default {
     LMap,
     LTileLayer,
     LMarker,
+    LPopup,
   },
   data () {
     return {
